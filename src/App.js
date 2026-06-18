@@ -546,7 +546,7 @@ function App() {
           {[1, 2, 3, 4, 5, 6, 7].map(num => (
             <li key={num}>
               <a
-                href="#"
+                href="javascript:void(0)"
                 className={activeItem === num ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault();
