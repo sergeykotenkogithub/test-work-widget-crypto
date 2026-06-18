@@ -202,12 +202,20 @@ const contentData = {
         content: "Список доступных валют. Запрашивается один раз при инициализации, кешируется."
       },
       {
+        type: "pre",
+        content: "// Response\n{\n  \"currencies\": [\n    {\n      \"code\": \"BTC\",\n      \"name\": \"Bitcoin\",\n      \"iconUrl\": \"https://...\",\n      \"decimals\": 8,\n      \"networks\": [\"bitcoin\", \"bsc\"]\n    },\n    {\n      \"code\": \"USDT\",\n      \"name\": \"Tether\",\n      \"iconUrl\": \"https://...\",\n      \"decimals\": 6,\n      \"networks\": [\"ethereum\", \"tron\", \"bsc\"]\n    }\n  ]\n}"
+      },
+      {
         type: "paragraph",
         content: "GET /v1/pairs/{from}/{to}/rate"
       },
       {
         type: "paragraph",
         content: "Текущий курс и условия для конкретной пары. Опрашивается с интервалом (polling) или через WS."
+      },
+      {
+        type: "pre",
+        content: "// Response\n{\n  \"pair\": \"BTC_USDT\",\n  \"rate\": \"67842.15\",          // строка для точности\n  \"invertedRate\": \"0.00001474\",\n  \"fee\": {\n    \"type\": \"percentage\",       // или \"fixed\"\n    \"value\": \"0.3\",             // 0.3%\n    \"minFeeAmount\": \"1.00\",\n    \"currency\": \"USDT\"\n  },\n  \"limits\": {\n    \"min\": \"0.0001\",\n    \"max\": \"2.5\",\n    \"currency\": \"BTC\"\n  },\n  \"expiresAt\": 1718700000000,   // timestamp, когда курс устареет\n  \"updatedAt\": 1718699985000\n}"
       },
       {
         type: "paragraph",
@@ -218,12 +226,20 @@ const contentData = {
         content: "Получить «заморозку» курса перед подтверждением. Вызывается при нажатии «Обменять» (до экрана подтверждения)."
       },
       {
+        type: "pre",
+        content: "// Request\n{\n  \"fromCurrency\": \"BTC\",\n  \"toCurrency\": \"USDT\",\n  \"fromAmount\": \"0.05\",\n  \"direction\": \"from\"   // пользователь указал \"отдаю\", а не \"получаю\"\n}\n\n// Response\n{\n  \"quoteId\": \"q_abc123\",\n  \"fromAmount\": \"0.05\",\n  \"toAmount\": \"3392.10\",\n  \"rate\": \"67842.00\",\n  \"fee\": {\n    \"amount\": \"10.18\",\n    \"currency\": \"USDT\"\n  },\n  \"lockedUntil\": 1718700030000   // курс заморожен на 30 секунд\n}"
+      },
+      {
         type: "paragraph",
         content: "POST /v1/exchange/execute"
       },
       {
         type: "paragraph",
         content: "Исполнить обмен по зафиксированному quoteId."
+      },
+      {
+        type: "pre",
+        content: "// Request\n{ \"quoteId\": \"q_abc123\" }\n\n// Response (success)\n{\n  \"transactionId\": \"tx_xyz789\",\n  \"status\": \"completed\",         // или \"pending\" для асинхронных обменов\n  \"fromAmount\": \"0.05\",\n  \"toAmount\": \"3392.10\",\n  \"fee\": { \"amount\": \"10.18\", \"currency\": \"USDT\" },\n  \"completedAt\": 1718700005000\n}\n\n// Response (error)\n{\n  \"error\": {\n    \"code\": \"QUOTE_EXPIRED\",     // машиночитаемый код\n    \"message\": \"Quote has expired. Please request a new one.\",\n    \"retriable\": true\n  }\n}"
       },
       {
         type: "heading",
