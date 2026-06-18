@@ -197,15 +197,14 @@ const contentData = {
       {
         type: "pre",
         content: "src/\n      components/\nwidgets/\n                CurrencySelector/\n           FromCurrency/\n           ToCurrency/\n                AmountInput/\n                RateDisplay/\n                ConfirmationScreen/\n               ResultScreen/\nshared/\n        Input/\n        Skeleton/\n    Button/\n    SearchSelect (используется в FromCurrency и  ToCurrency)\n    Modal/\n    Toast/    \n      hooks/\n        useExchangeRate.ts     # polling / WS подписка\n        useExchangeSession.ts  # логика сессии, swap, вычисление итогов\n        useExchangeSubmit.ts   # submit flow, статусы\n      store/\n        exchangeSlice.ts       # или context\n      api/\n        exchangeApi.ts         # типизированные вызовы\n        exchangeApi.mock.ts    # моки для разработки\n      utils/\n        currencyMath.ts        # арифметика с Decimal\n        formatters.ts          # форматирование сумм, курсов\n      types/\n        exchange.types.ts"
-      }
-    ]
-  },
-  4: {
-    title: "Валидация входящих значений",
-    sections: [
+      },
       {
         type: "heading",
         level: 3,
+        content: "Валидация входящих значений"
+      },
+      {
+        type: "heading",
         content: "Валидацию делю на два уровня:"
       },
       {
@@ -218,7 +217,7 @@ const contentData = {
       }
     ]
   },
-  5: {
+  4: {
     title: "Взаимодействие с бэкэндом",
     sections: [
       {
@@ -289,7 +288,7 @@ const contentData = {
       }
     ]
   },
-  6: {
+  5: {
     title: "UX и состояния интерфейса:",
     sections: [
       {
@@ -403,7 +402,7 @@ const contentData = {
       }
     ]
   },
-  7: {
+  6: {
     title: "Сложности и edge-кейсы",
     sections: [
       {
@@ -441,7 +440,7 @@ const contentData = {
       }
     ]
   },
-  8: {
+  7: {
     title: "Вопросы",
     sections: [
       {
@@ -544,7 +543,7 @@ function App() {
           <p>Технические ответы для интервью</p>
         </div>
         <ul className="sidebar-nav">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+          {[1, 2, 3, 4, 5, 6, 7].map(num => (
             <li key={num}>
               <a
                 href="#"
