@@ -76,6 +76,27 @@ body {
   font-weight: 600;
 }
 
+.sidebar-nav button {
+  display: block;
+  padding: 12px 16px;
+  color: #ecf0f1;
+  background: none;
+  border: none;
+  text-align: left;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+.sidebar-nav button:hover {
+  background-color: #34495e;
+}
+.sidebar-nav button.active {
+  background-color: #3498db;
+  font-weight: 600;
+}
+
 .main-content {
   flex: 1;
   padding: 30px;

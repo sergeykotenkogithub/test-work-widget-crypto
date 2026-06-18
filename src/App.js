@@ -545,10 +545,8 @@ function App() {
         <ul className="sidebar-nav">
           {[1, 2, 3, 4, 5, 6, 7].map(num => (
             <li key={num}>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              {/* eslint-disable-next-line no-script-url */}
-              <a
-                href="#"
+              <button
+                type="button"
                 className={activeItem === num ? 'active' : ''}
                 onClick={(e) => {
                   e.preventDefault();
@@ -557,7 +555,7 @@ function App() {
               >
                 <span className="question-number">{num}.</span>
                 {contentData[num].title.split('\n')[0]}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
