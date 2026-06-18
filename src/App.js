@@ -117,47 +117,47 @@ const contentData = {
       },
       {
         type: "paragraph",
-        content: "ExchangeWidget (корень)"
+        content: "📦 ExchangeWidget (корневой компонент)"
       },
       {
         type: "paragraph",
-        content: "I── CurrencySelector (Выбор валют с поиском, иконкой, балансом )"
+        content: "🔽 CurrencySelector (Выбор валют с поиском, иконкой, балансом)"
       },
       {
         type: "paragraph",
-        content: "│   │   ├── FromCurrency"
+        content: "   ├─ 📤 FromCurrency"
       },
       {
         type: "paragraph",
-        content: "│   │   └── ToCurrency"
+        content: "   └─ 📥 ToCurrency"
       },
       {
         type: "paragraph",
-        content: "├── AmountInput (инпут с форматированием, маской, валидацией)"
+        content: "├─ ✏️ AmountInput (инпут с форматированием, маской, валидацией)"
       },
       {
         type: "paragraph",
-        content: "├── RateDisplay (текущий курс, время последнего обновления, индикатор staleness)"
+        content: "├─ 📈 RateDisplay (текущий курс, время последнего обновления, индикатор устаревания)"
       },
       {
         type: "paragraph",
-        content: "├── SwapButton (иконка ⇄, доступна всегда кроме загрузки)"
+        content: "├─ 🔄 SwapButton (иконка ⇄, доступна всегда кроме загрузки)"
       },
       {
         type: "paragraph",
-        content: "├── ExchangeSummary (итого, комиссия, вы получите)"
+        content: "├─ 💰 ExchangeSummary (итого, комиссия, вы получите)"
       },
       {
         type: "paragraph",
-        content: "├── ExchangeButton (кнопка «Обменять», блокируется при невалидном состоянии)"
+        content: "├─ ▶️ ExchangeButton (кнопка «Обменять», блокируется при невалидном состоянии)"
       },
       {
         type: "paragraph",
-        content: "├── ConfirmationScreen (модал или новый экран)"
+        content: "├─ ❓ ConfirmationScreen (модал или новый экран)"
       },
       {
         type: "paragraph",
-        content: "└── ResultScreen (успех/ошибка)"
+        content: "└─ ✅/❌ ResultScreen (успех/ошибка)"
       },
       {
         type: "heading",
@@ -196,7 +196,7 @@ const contentData = {
       },
       {
         type: "pre",
-        content: "src/\n      components/\nwidgets/\n                CurrencySelector/\n           FromCurrency/\n           ToCurrency/\n                AmountInput/\n                RateDisplay/\n                ConfirmationScreen/\n               ResultScreen/\nshared/\n        Input/\n        Skeleton/\n    Button/\n    SearchSelect (используется в FromCurrency и  ToCurrency)\n    Modal/\n    Toast/    \n      hooks/\n        useExchangeRate.ts     # polling / WS подписка\n        useExchangeSession.ts  # логика сессии, swap, вычисление итогов\n        useExchangeSubmit.ts   # submit flow, статусы\n      store/\n        exchangeSlice.ts       # или context\n      api/\n        exchangeApi.ts         # типизированные вызовы\n        exchangeApi.mock.ts    # моки для разработки\n      utils/\n        currencyMath.ts        # арифметика с Decimal\n        formatters.ts          # форматирование сумм, курсов\n      types/\n        exchange.types.ts"
+        content: "src/\n📁 components/\n   📁 widgets/\n      📁 CurrencySelector/\n         📄 FromCurrency.tsx\n         📄 ToCurrency.tsx\n      📄 AmountInput.tsx\n      📄 RateDisplay.tsx\n      📄 ConfirmationScreen.tsx\n      📄 ResultScreen.tsx\n   📁 shared/\n      📄 Input.tsx\n      📄 Skeleton.tsx\n      📄 Button.tsx\n      📄 SearchSelect.tsx (используется в FromCurrency и ToCurrency)\n      📄 Modal.tsx\n      📄 Toast.tsx\n   📁 hooks/\n      📄 useExchangeRate.ts     # polling / WS подписка\n      📄 useExchangeSession.ts  # логика сессии, swap, вычисление итогов\n      📄 useExchangeSubmit.ts   # submit flow, статусы\n   📁 store/\n      📄 exchangeSlice.ts       # или context\n   📁 api/\n      📄 exchangeApi.ts         # типизированные вызовы\n      📄 exchangeApi.mock.ts    # моки для разработки\n   📁 utils/\n      📄 currencyMath.ts        # арифметика с Decimal\n      📄 formatters.ts          # форматирование сумм, курсов\n   📁 types/\n      📄 exchange.types.ts"
       },
       {
         type: "heading",
